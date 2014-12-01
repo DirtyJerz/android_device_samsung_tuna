@@ -31,7 +31,7 @@ PRODUCT_VENDOR_KERNEL_HEADERS := $(DEVICE_FOLDER)/kernel-headers
 TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_FOLDER)/include
 
 # Setup custom omap4xxx defines
-BOARD_USE_CUSTOM_LIBION := true
+#BOARD_USE_CUSTOM_LIBION := true
 
 # Camera
 #TI_OMAP4_CAMERAHAL_VARIANT := true
@@ -64,7 +64,7 @@ TARGET_NO_BOOTLOADER := true
 BOARD_KERNEL_BASE := 0x80000000
 # BOARD_KERNEL_CMDLINE :=
 
-TARGET_KERNEL_CONFIG := fml_tuna_defconfig
+TARGET_KERNEL_CONFIG := shiny_tuna_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/tuna
 
 # GCC 4.8 somehow breaks the eMMC patch applied on boot-up for VYL00M eMMCs on maguro
@@ -73,14 +73,14 @@ TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.7
 TARGET_PREBUILT_KERNEL := $(DEVICE_FOLDER)/kernel
 
 # External SGX Module
-SGX_MODULES:
-	make clean -C $(DEVICE_FOLDER)/pvr-source/eurasiacon/build/linux2/omap4430_android
-	cp $(TARGET_KERNEL_SOURCE)/drivers/video/omap2/omapfb/omapfb.h $(KERNEL_OUT)/drivers/video/omap2/omapfb/omapfb.h
-	make -j8 -C $(DEVICE_FOLDER)/pvr-source/eurasiacon/build/linux2/omap4430_android ARCH=arm KERNEL_CROSS_COMPILE=arm-eabi- CROSS_COMPILE=arm-eabi- KERNELDIR=$(KERNEL_OUT) TARGET_PRODUCT="blaze_tablet" BUILD=release TARGET_SGX=540 PLATFORM_VERSION=4.0
-	mv $(KERNEL_OUT)/../../target/kbuild/pvrsrvkm_sgx540_120.ko $(KERNEL_MODULES_OUT)
-	$(ARM_EABI_TOOLCHAIN)/arm-eabi-strip --strip-unneeded $(KERNEL_MODULES_OUT)/pvrsrvkm_sgx540_120.ko
+#SGX_MODULES:
+#	make clean -C $(DEVICE_FOLDER)/pvr-source/eurasiacon/build/linux2/omap4430_android
+#	cp $(TARGET_KERNEL_SOURCE)/drivers/video/omap2/omapfb/omapfb.h $(KERNEL_OUT)/drivers/video/omap2/omapfb/omapfb.h
+#	make -j8 -C $(DEVICE_FOLDER)/pvr-source/eurasiacon/build/linux2/omap4430_android ARCH=arm KERNEL_CROSS_COMPILE=arm-eabi- CROSS_COMPILE=arm-eabi- KERNELDIR=$(KERNEL_OUT) TARGET_PRODUCT="blaze_tablet" BUILD=release TARGET_SGX=540 PLATFORM_VERSION=4.0
+#	mv $(KERNEL_OUT)/../../target/kbuild/pvrsrvkm_sgx540_120.ko $(KERNEL_MODULES_OUT)
+#	$(ARM_EABI_TOOLCHAIN)/arm-eabi-strip --strip-unneeded $(KERNEL_MODULES_OUT)/pvrsrvkm_sgx540_120.ko
 
-TARGET_KERNEL_MODULES += SGX_MODULES
+#TARGET_KERNEL_MODULES += SGX_MODULES
 
 TARGET_NO_RADIOIMAGE := true
 TARGET_BOARD_PLATFORM := omap4
@@ -100,9 +100,9 @@ TARGET_BOOTLOADER_BOARD_NAME := tuna
 TARGET_TI_HWC_HDMI_DISABLED := true
 
 # Franken-domx
-TI_CUSTOM_DOMX_PATH := $(DEVICE_FOLDER)/domx
-DOMX_PATH := $(DEVICE_FOLDER)/domx
-COMMON_GLOBAL_CFLAGS += -DOMAP_TUNA
+#TI_CUSTOM_DOMX_PATH := $(DEVICE_FOLDER)/domx
+#DOMX_PATH := $(DEVICE_FOLDER)/domx
+#COMMON_GLOBAL_CFLAGS += -DOMAP_TUNA
 
 # For enabling some things that are OMAP_ENHANCEMENT's and are applicable to tuna...
 OMAP_TUNA := true

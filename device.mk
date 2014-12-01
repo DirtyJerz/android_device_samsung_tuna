@@ -24,7 +24,7 @@ DEVICE_FOLDER := device/samsung/tuna
 DEVICE_PACKAGE_OVERLAYS := $(DEVICE_FOLDER)/overlay/aosp
 
 # Setup custom omap4xxx defines
-BOARD_USE_CUSTOM_LIBION := true
+#BOARD_USE_CUSTOM_LIBION := true
 
 # This device is xhdpi.  However the platform doesn't
 # currently contain all of the bitmaps at xhdpi density so
@@ -34,8 +34,8 @@ PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
 PRODUCT_PACKAGES := \
-	hwcomposer.tuna \
-	camera.tuna \
+#	hwcomposer.tuna \
+#	camera.tuna \
 	lights.tuna \
 	charger \
 	charger_res_images \
@@ -204,11 +204,11 @@ PRODUCT_PACKAGES += \
 	setup_fs
 
 # F2FS filesystem
-PRODUCT_PACKAGES += \
-	mkfs.f2fs \
-	fsck.f2fs \
-	fibmap.f2fs \
-	f2fstat
+#PRODUCT_PACKAGES += \
+#	mkfs.f2fs \
+#	fsck.f2fs \
+#	fibmap.f2fs \
+#	f2fstat
 
 # Allow dexopting system apps to /cache and not /data
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -216,25 +216,25 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # TI OMAP4
 PRODUCT_PACKAGES += \
-	libion_ti \
-	smc_pa_ctrl \
-	tf_daemon \
-	libtf_crypto_sst \
+#	libion_ti \
+#	smc_pa_ctrl \
+#	tf_daemon \
+#	libtf_crypto_sst \
 	libcorkscrew \
 	pvrsrvinit
 
-PRODUCT_PACKAGES += \
-	libdomx \
-	libOMX_Core \
-	libOMX.TI.DUCATI1.VIDEO.H264E \
-	libOMX.TI.DUCATI1.VIDEO.MPEG4E \
-	libOMX.TI.DUCATI1.VIDEO.DECODER \
-	libOMX.TI.DUCATI1.VIDEO.DECODER.secure \
-	libOMX.TI.DUCATI1.VIDEO.CAMERA \
-	libOMX.TI.DUCATI1.MISC.SAMPLE \
-	libstagefrighthw \
-	libI420colorconvert \
-	libtiutils_custom
+#PRODUCT_PACKAGES += \
+#	libdomx \
+#	libOMX_Core \
+#	libOMX.TI.DUCATI1.VIDEO.H264E \
+#	libOMX.TI.DUCATI1.VIDEO.MPEG4E \
+#	libOMX.TI.DUCATI1.VIDEO.DECODER \
+#	libOMX.TI.DUCATI1.VIDEO.DECODER.secure \
+#	libOMX.TI.DUCATI1.VIDEO.CAMERA \
+#	libOMX.TI.DUCATI1.MISC.SAMPLE \
+#	libstagefrighthw \
+#	libI420colorconvert \
+#	libtiutils_custom
 
 PRODUCT_PACKAGES += \
 	libwpa_client \
@@ -246,7 +246,7 @@ PRODUCT_PACKAGES += \
 $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 
 $(call inherit-product-if-exists, vendor/nxp/pn544/nxp-pn544-fw-vendor.mk)
-#$(call inherit-product, hardware/ti/omap4xxx/omap4.mk)
+$(call inherit-product, hardware/ti/omap4xxx/omap4.mk)
 #$(call inherit-product-if-exists, vendor/ti/proprietary/omap4/ti-omap4-vendor.mk)
 $(call inherit-product-if-exists, vendor/samsung/tuna/device-vendor.mk)
 
