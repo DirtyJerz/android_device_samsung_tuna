@@ -261,4 +261,14 @@
         <item>SUPL_HOST=supl.google.com</item>
         <item>SUPL_PORT=7276</item>
     </string-array>
+
+    <!-- Values for geolocation servers -->
+    <string-array name="config_locationProviderPackageNames" translatable="false">
+        <!-- The standard AOSP fused location provider -->
+        <item>com.android.location.fused</item>
+        <!-- Legacy Google provider - consider removing -->
+        <item>com.google.android.location</item>
+        <!-- GMS (gapps) provider for 4.4 and above-->
+        <item>com.google.android.gms</item>
+    </string-array>
 </resources>
