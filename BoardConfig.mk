@@ -64,7 +64,7 @@ TARGET_NO_BOOTLOADER := true
 BOARD_KERNEL_BASE := 0x80000000
 # BOARD_KERNEL_CMDLINE :=
 
-TARGET_KERNEL_CONFIG := shiny_tuna_defconfig
+TARGET_KERNEL_CONFIG := tuna_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/tuna
 
 # GCC 4.8 somehow breaks the eMMC patch applied on boot-up for VYL00M eMMCs on maguro
@@ -105,7 +105,7 @@ TARGET_TI_HWC_HDMI_DISABLED := true
 #COMMON_GLOBAL_CFLAGS += -DOMAP_TUNA
 
 # For enabling some things that are OMAP_ENHANCEMENT's and are applicable to tuna...
-OMAP_TUNA := true
+#OMAP_TUNA := true
 
 ifdef OMAP_ENHANCEMENT
 	COMMON_GLOBAL_CFLAGS += -DOMAP_ENHANCEMENT -DTARGET_OMAP4
