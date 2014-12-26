@@ -1,0 +1,5 @@
+#shell
+
+allow shell dalvikcache_data_file:file write;
+allow shell self:capability sys_nice;
+
