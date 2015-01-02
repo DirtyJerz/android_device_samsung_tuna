@@ -34,8 +34,6 @@ PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
 PRODUCT_PACKAGES := \
-#	hwcomposer.tuna \
-#	camera.tuna \
 	lights.tuna \
 	charger \
 	charger_res_images \
@@ -231,10 +229,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # TI OMAP4
 PRODUCT_PACKAGES += \
-#	libion_ti \
-#	smc_pa_ctrl \
-#	tf_daemon \
-#	libtf_crypto_sst \
 	libcorkscrew \
 	pvrsrvinit
 
